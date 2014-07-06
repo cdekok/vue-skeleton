@@ -14494,7 +14494,7 @@ function query (el) {
 
 module.exports = ViewModel
 },{"./batcher":5,"./compiler":7,"./transition":28,"./utils":29}],31:[function(require,module,exports){
-module.exports = '#app {\n    font-family: \'Helvetica Neue\', Arial, sans-serif;\n}\n.view {\n    transition: all .3s ease;\n    opacity: 1;\n}\n.view.v-leave, .view.v-enter {\n    opacity: 0;\n}';
+module.exports = '#app {\n    font-family: \'Helvetica Neue\', Arial, sans-serif;\n}\n.view {\n    transition: all .3s ease;\n    opacity: 1;\n    position: absolute;\n}\n.view.v-enter {\n    opacity: 0;\n    transform: translate3d(30px, 0, 0);\n}\n.view.v-leave {\n    opacity: 0;\n    transform: translate3d(-30px, 0, 0);\n}';
 },{}],32:[function(require,module,exports){
 module.exports = '<h1>{{title}}</h1>\n    <div v-view="currentView" class="view" v-with="global:data" v-ref="page" v-transition>\n</div>';
 },{}],33:[function(require,module,exports){
