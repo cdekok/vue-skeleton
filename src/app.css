@@ -1,3 +1,10 @@
 #app {
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
+.view {
+    transition: all .3s ease;
+    opacity: 1;
+}
+.view.v-leave, .view.v-enter {
+    opacity: 0;
+}
