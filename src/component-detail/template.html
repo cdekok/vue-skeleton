@@ -1,0 +1,6 @@
+<h2>{{msg}}</h2>
+<a href="/" v-on="click: goToResult()">Back to result</a>
+<div v-if="media">
+    <h2>{{media.title}}</h2>
+    <img v-attr="src:media.asset[0].thumb.large" />
+</div>
