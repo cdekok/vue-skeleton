@@ -14567,7 +14567,7 @@ module.exports = {
 },{"./style.css":35,"./template.html":36,"insert-css":1,"page":3}],35:[function(require,module,exports){
 module.exports = '#detail h2 {\n    font-family: Georgia;\n}';
 },{}],36:[function(require,module,exports){
-module.exports = '<h2>{{msg}}</h2>\n<a href="/" v-on="click: goToResult()">Back to result</a>\n<div v-if="media">\n    <h2>{{media.title}}</h2>\n    <img v-attr="src:media.asset[0].thumb.large" />\n</div>';
+module.exports = '<h2>{{msg}}</h2>\n<a href="/" v-on="click: goToResult">Back to result</a>\n<div v-if="media">\n    <h2>{{media.title}}</h2>\n    <img v-attr="src:media.asset[0].thumb.large" />\n</div>';
 },{}],37:[function(require,module,exports){
 module.exports = {
     id: 'notfound',
