@@ -5,6 +5,9 @@ var page = require('page');
 module.exports = {
     id: 'result',
     template: require('./template.html'),
+    components: {
+        pagination: require('./../component-pagination')
+    },
     data: {
         msg: 'Result view',
         thumbs: [],
@@ -18,6 +21,8 @@ module.exports = {
     'methods': {
         'setState': function(ctx, data) {
             this.media = data.media;
+            // Set pagination data
+            this.$.pagination.setState(ctx, data.metadata.pagination);
         },
         goToDetail: function(data, e) {
             e.preventDefault();

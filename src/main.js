@@ -28,7 +28,11 @@ var app = function(options) {
     page('/', function(ctx, next) {
         app.setView('result');
         // Call api
-        $.getJSON(defaultOptions.url, {apiKey: defaultOptions.apiKey}, function(data) {
+        var params = {apiKey: defaultOptions.apiKey};
+        if (ctx.query.page) {
+            params.page = ctx.query.page;
+        }
+        $.getJSON(defaultOptions.url, params, function(data) {
             app.setState(ctx, data);
         });
     });
