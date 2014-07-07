@@ -1,0 +1,16 @@
+.pagination {
+    list-style: none;
+}
+.pagination li {
+    display: inline-block;
+}
+
+.pagination li a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+}
+.pagination li.active a {
+    cursor: default;
+    text-decoration: none;
+    background: #eee;
+}

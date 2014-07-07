@@ -1,3 +1,5 @@
+require('insert-css')(require('./style.css'))
+
 var page = require('page');
 var qs = require('qs');
 var $ = require('jquery');

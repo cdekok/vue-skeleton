@@ -14541,7 +14541,7 @@ module.exports = function(options) {
         }
     };
 };
-},{"./app.css":31,"./app.html":32,"./component-detail":34,"./component-notfound":37,"./component-result":41,"insert-css":1,"vue":25}],34:[function(require,module,exports){
+},{"./app.css":31,"./app.html":32,"./component-detail":34,"./component-notfound":37,"./component-result":42,"insert-css":1,"vue":25}],34:[function(require,module,exports){
 require('insert-css')(require('./style.css'))
 
 var page = require('page');
@@ -14578,6 +14578,8 @@ module.exports = {
 },{"./template.html":38}],38:[function(require,module,exports){
 module.exports = '<h1>404</h1>\n<p>Page not found</p>';
 },{}],39:[function(require,module,exports){
+require('insert-css')(require('./style.css'))
+
 var page = require('page');
 var qs = require('qs');
 var $ = require('jquery');
@@ -14694,9 +14696,11 @@ var pagination = function(data, ctx, showPages) {
         'getNextPage': self.getNextPage
     };
 };
-},{"./template.html":40,"jquery":2,"page":3,"qs":4}],40:[function(require,module,exports){
-module.exports = '<ul class="pagination">\n    <li>\n        <a href="{{prev}}">previous</a>\n    </li>\n    <li v-repeat="pages">\n        <a href="{{link}}">{{page}}</a>\n    </li>\n    <li>\n        <a href="{{next}}">next</a>\n    </li>\n</ul>';
+},{"./style.css":40,"./template.html":41,"insert-css":1,"jquery":2,"page":3,"qs":4}],40:[function(require,module,exports){
+module.exports = '.pagination {\n    list-style: none;\n}\n.pagination li {\n    display: inline-block;\n}\n\n.pagination li a {\n    display: inline-block;\n    padding: 0.5rem 1rem;\n}\n.pagination li.active a {\n    cursor: default;\n    text-decoration: none;\n    background: #eee;\n}';
 },{}],41:[function(require,module,exports){
+module.exports = '<ul class="pagination">\n    <li>\n        <a href="{{prev}}">previous</a>\n    </li>\n    <li v-repeat="pages" v-class="active: active">\n        <a href="{{link}}">{{page}}</a>\n    </li>\n    <li>\n        <a href="{{next}}">next</a>\n    </li>\n</ul>';
+},{}],42:[function(require,module,exports){
 require('insert-css')(require('./style.css'))
 
 var page = require('page');
@@ -14730,11 +14734,11 @@ module.exports = {
         }
     }
 };
-},{"./../component-pagination":39,"./style.css":42,"./template.html":43,"insert-css":1,"page":3}],42:[function(require,module,exports){
+},{"./../component-pagination":39,"./style.css":43,"./template.html":44,"insert-css":1,"page":3}],43:[function(require,module,exports){
 module.exports = '#result h2 {\n    font-style: italic;\n}';
-},{}],43:[function(require,module,exports){
-module.exports = '<h2>{{msg}}</h2\n<div>Test</div>\n<div class="pagination" v-component="pagination" v-ref="pagination">\n    <ul>\n        <li>pagination</li>\n    </ul>\n</div>\n<ul id="result">\n    <li v-repeat="media" class="item-{{$index}}">\n        <div v-if="asset.length > 0 && asset[0].thumb">\n            <a href="{{id|detailLink}}" v-on="click: goToDetail($parent, $event)">\n                <img v-attr="src:asset[0].thumb.small" />\n            </a>\n        </div>\n    </li>\n</ul>';
 },{}],44:[function(require,module,exports){
+module.exports = '<h2>{{msg}}</h2\n<div></div>\n<div class="pagination" v-component="pagination" v-ref="pagination"></div>\n\n<ul id="result">\n    <li v-repeat="media" class="item-{{$index}}">\n        <div v-if="asset.length > 0 && asset[0].thumb">\n            <a href="{{id|detailLink}}" v-on="click: goToDetail($parent, $event)">\n                <img v-attr="src:asset[0].thumb.small" />\n            </a>\n        </div>\n    </li>\n</ul>';
+},{}],45:[function(require,module,exports){
 (function (global){
 var app = function(options) {
     // jQuery
@@ -14808,4 +14812,4 @@ var app = function(options) {
 global.app = app;
 
 }).call(this,typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./app":33,"jquery":2,"page":3,"qs":4}]},{},[44])
+},{"./app":33,"jquery":2,"page":3,"qs":4}]},{},[45])

@@ -2,7 +2,7 @@
     <li>
         <a href="{{prev}}">previous</a>
     </li>
-    <li v-repeat="pages">
+    <li v-repeat="pages" v-class="active: active">
         <a href="{{link}}">{{page}}</a>
     </li>
     <li>
